@@ -18,7 +18,7 @@
             <div><label>Nome: <input type="text" name="nome" value="${pessoa.nome}"</label></div>
             <div><label>Email: <input type="text" name="email" value="${pessoa.email}"</label></div>
             <div><label>Descricao: <input type="text" name="descricao" value="${pessoa.descricao}"</label></div>
-          
+            <div><label>Descricao: <input type="text" name="status" value="${pessoa.status}"</label></div>
             <div><input type="submit"></div>
         </form>
     </body>
