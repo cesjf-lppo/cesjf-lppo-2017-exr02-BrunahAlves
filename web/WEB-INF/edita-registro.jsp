@@ -18,7 +18,13 @@
             <div><label>Nome: <input type="text" name="nome" value="${pessoa.nome}"</label></div>
             <div><label>Email: <input type="text" name="email" value="${pessoa.email}"</label></div>
             <div><label>Descricao: <input type="text" name="descricao" value="${pessoa.descricao}"</label></div>
-            <div><label>Status: <input type="text" name="status" value="${pessoa.status}"</label></div>
+            <select name="status" value="${pessoa.status}">
+                <option value="0">0: Aberto</option>
+                <option value="1">1: Confirmado</option>
+                <option value="2">2: Recusado</option>
+                <option value="3">3: Em execução</option>
+                <option value="4">4: Resolvido</option>
+            </select>
             <div><input type="submit"></div>
         </form>
     </body>
