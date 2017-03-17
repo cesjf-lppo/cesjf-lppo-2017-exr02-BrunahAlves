@@ -27,7 +27,7 @@ public class ListaRegistrosServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-               List<Pessoa> pessoa = new ArrayList<>();
+               List<Pessoa> pessoas = new ArrayList<>();
 
         try {
             //Pegar os dados do banco
@@ -42,7 +42,7 @@ public class ListaRegistrosServlet extends HttpServlet {
                 contatoAtual.setEmail(resultado.getString("email"));
                 contatoAtual.setDescricao(resultado.getString("descricao"));
                 contatoAtual.setStatus(resultado.getInt("status"));
-                pessoa.add(contatoAtual);
+                pessoas.add(contatoAtual);
             }
             
         } catch (ClassNotFoundException ex) {
@@ -50,7 +50,8 @@ public class ListaRegistrosServlet extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(ListaRegistrosServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        request.setAttribute("pessoas", pessoas);
+        request.getRequestDispatcher("WEB-INF/lista-registros.jsp").forward(request, response);
     }
 
 
