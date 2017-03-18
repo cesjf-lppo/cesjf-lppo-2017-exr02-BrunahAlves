@@ -17,13 +17,13 @@
             <div><input type="hidden" name="id" value="${pessoa.id}"/>id: ${pessoa.id}</div>
             <div><label>Nome: <input type="text" name="nome" value="${pessoa.nome}"</label></div>
             <div><label>Email: <input type="text" name="email" value="${pessoa.email}"</label></div>
-            <div><label>Descricao: <input type="text" name="descricao" value="${pessoa.descricao}"</label></div>
+            <div><label>Descricao: <textarea name="descricao">${pessoa.descricao}</textarea></label></div>
             <select name="status" value="${pessoa.status}">
-                <option value="0">0: Aberto</option>
-                <option value="1">1: Confirmado</option>
-                <option value="2">2: Recusado</option>
-                <option value="3">3: Em execução</option>
-                <option value="4">4: Resolvido</option>
+                <option value="0" ${pessoa.status==0?"selected":""}>0: Aberto</option>
+                <option value="1" ${pessoa.status==1?"selected":""}>1: Confirmado</option>
+                <option value="2" ${pessoa.status==2?"selected":""}>2: Recusado</option>
+                <option value="3" ${pessoa.status==3?"selected":""}>3: Em execução</option>
+                <option value="4" ${pessoa.status==4?"selected":""}>4: Resolvido</option>
             </select>
             <div><input type="submit"></div>
         </form>

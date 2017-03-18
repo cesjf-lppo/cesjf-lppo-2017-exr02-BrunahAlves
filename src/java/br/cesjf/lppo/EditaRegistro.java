@@ -52,13 +52,15 @@ public class EditaRegistro extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int status = Integer.parseInt(request.getParameter("status"));
-        Pessoa contato = new Pessoa();
-        contato.setId(Long.parseLong(request.getParameter("id")));
-        contato.setNome(request.getParameter("nome"));
-        contato.setEmail(request.getParameter("email"));
-        contato.setDescricao(request.getParameter("descricao"));
-        contato.setStatus(status);//request.getParameter("status"));//Integer.parseInt(request.getParameter("status")));
+        
+      //  int status = Integer.parseInt(request.getParameter("status"));
+        Pessoa pessoa = new Pessoa();
+        pessoa.setId(Long.parseLong(request.getParameter("id")));
+        pessoa.setNome(request.getParameter("nome"));
+        pessoa.setEmail(request.getParameter("email"));
+        pessoa.setDescricao(request.getParameter("descricao"));
+       // contato.setStatus(status);//request.getParameter("status"));
+       pessoa.setStatus(Integer.parseInt(request.getParameter("status")));
 
         try {
             //Pegar os dados do banco
@@ -66,11 +68,11 @@ public class EditaRegistro extends HttpServlet {
             Connection conexao = DriverManager.getConnection("jdbc:derby://localhost:1527/lppo-2017-1", "usuario", "senha");
             Statement operacao = conexao.createStatement();
             operacao.executeUpdate("UPDATE reclamacao SET nome='"
-                    + contato.getNome() + "', email='"
-                    + contato.getEmail() + "', descricao='"
-                    + contato.getDescricao() + "',status="
-                    + contato.getStatus()
-                    + " WHERE id=" + contato.getId());
+                    + pessoa.getNome() + "', email='"
+                    + pessoa.getEmail() + "', descricao='"
+                    + pessoa.getDescricao() + "',status="
+                    + pessoa.getStatus()
+                    + " WHERE id=" + pessoa.getId());
 
             //UPDATE reclamacao SET nome='', email=',descricao='', status= WHERE id=1;
             /*
