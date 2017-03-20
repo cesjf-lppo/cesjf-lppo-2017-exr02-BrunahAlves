@@ -9,7 +9,6 @@ public class Pessoa {
     private String descricao;
     private int status;
 
-
     public Long getId() {
         return id;
     }

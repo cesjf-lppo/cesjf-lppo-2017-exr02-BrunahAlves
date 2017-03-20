@@ -1,9 +1,3 @@
-<%-- 
-    Document   : adiciona-registro
-    Created on : 17/03/2017, 21:34:09
-    Author     : aluno
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,11 +8,11 @@
     <body>
         <h1>Cria Reclamações</h1>
         <form method="post">
-            <div><label>Nome: <input type="text" name="nome" value="${pessoa.nome}"</label></div>
-            <div><label>Email: <input type="text" name="email" value="${pessoa.email}"</label></div>
-            <div><label>Descricao: <textarea name="descricao">${pessoa.descricao}</textarea></label></div>
-            <select name="status" value="${pessoa.status}">
-                <option value="0" ${pessoa.status==0?"selected":""}>0: Aberto</option>
+            <div><label>Nome: <input type="text" name="nome"></label></div>
+            <div><label>Email: <input type="text" name="email"></label></div>
+            <div><label>Descricao: <textarea name="descricao"></textarea></label></div>
+            <select name="status" >
+                <option value="0">0: Aberto</option>
             </select>
             <div><input type="submit"></div>
         </form>
